@@ -1,6 +1,6 @@
 -- utils.lua
 local utils = {
-    function EnemyTarget()
+    function kaTarget = function()
         local entities = world.entities()
         local target = nil
         for i = 1, #entities do
