@@ -1,14 +1,14 @@
 -- utils.lua
 local utils = {
-    kaTarget = function()
-        local entities = world.entities()
+    kaTarget = function(wrld, plyr)
+        local entities = wrld.entities()
         local target = nil
         for i = 1, #entities do
-            if entities[i] ~= player.id() and world.is_player(entities[i]) then
+            if entities[i] ~= plyr.id() and wrld.is_player(entities[i]) then
                 if target == nil then
                     target = entities[i]
                 else
-                    if player.distance_to_entity(entities[i]) < player.distance_to_entity(target) then
+                    if plyr.distance_to_entity(entities[i]) < plyr.distance_to_entity(target) then
                         target = entities[i]
                     end
                 end
